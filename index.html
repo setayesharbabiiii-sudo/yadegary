@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مدرسه یادگاری 🌸</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Tahoma,sans-serif;background:linear-gradient(135deg,#fff0f6,#eee8ff);color:#493653}
+header{text-align:center;padding:30px 12px;background:linear-gradient(120deg,#c084fc,#f9a8d4);color:white;border-radius:0 0 30px 30px}
+header h1{font-size:28px}
+main{max-width:900px;margin:auto;padding:15px}
+.card{background:white;padding:18px;margin:18px 0;border-radius:20px;box-shadow:0 5px 18px #c084fc30}
+h2{color:#a855f7;font-size:20px}
+.buttons{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+button{background:#e9d5ff;color:#59366b;border:0;padding:12px;border-radius:12px;font-family:inherit;cursor:pointer}
+.item{background:#fff4fa;padding:11px;margin:8px 0;border-right:4px solid #e9a8d4;border-radius:10px}
+.table-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:570px;font-size:13px}
+th,td{border:1px solid #e6c9ee;padding:10px 7px;text-align:center}
+th{background:#e9d5ff}
+td{background:#fff8fc}
+tr:nth-child(even) td{background:#f8f2ff}
+footer{text-align:center;padding:25px;color:#8b5e83}
+</style>
+</head>
+<body>
+<header>
+<h1>🌸 مدرسه یادگاری 🌸</h1>
+<p>پایگاه کلاس یازدهم ریاضی 💗</p>
+<p>دوستی، تلاش و خاطره‌های قشنگ</p>
+</header>
+
+<main>
+<div class="card" style="text-align:center">
+<h2>به کلاس خودمون خوش اومدین 🎀</h2>
+<p>اینجا گوشه‌ی کوچیک کلاس ماست؛ پر از اسم‌ها، درس‌ها و خاطره‌ها!</p>
+<div class="buttons">
+<button onclick="go('students')">👩🏻‍🎓 دانش‌آموزان</button>
+<button onclick="go('teachers')">👩🏻‍🏫 دبیران</button>
+<button onclick="go('lessons')">📚 درس‌ها</button>
+<button onclick="go('schedule')">🗓️ برنامه هفتگی</button>
+</div>
+</div>
+
+<section class="card" id="students">
+<h2>👩🏻‍🎓 دانش‌آموزان یازدهم ریاضی</h2>
+<div class="item">🌷 فاطمه</div>
+<div class="item">🌷 ستایش</div>
+<div class="item">🌷 نازنین</div>
+<div class="item">🌷 ناسیّه</div>
+<div class="item">🌷 حسنی</div>
+<div class="item">🌷 اندیا</div>
+<div class="item">🌷 الیسا</div>
+<div class="item">🌷 هستی</div>
+<div class="item">🌷 حوریه</div>
+<div class="item">🌷 نیایش</div>
+</section>
+
+<section class="card" id="teachers">
+<h2>👩🏻‍🏫 دبیران عزیزمون</h2>
+<div class="item">📐 حسابان، آمار و احتمال، هندسه — خانم حیدری</div>
+<div class="item">📖 ادبیات و نگارش — خانم نوروزی</div>
+<div class="item">🧪 آزمایشگاه — خانم امیرپور</div>
+<div class="item">⚡ فیزیک — خانم فاطمی</div>
+<div class="item">🌍 انسان و محیط زیست، زمین‌شناسی و تاریخ — خانم یادگارفرد</div>
+<div class="item">📘 عربی، کار و هنر — خانم دهقان</div>
+<div class="item">🧪 شیمی — نام دبیر هنوز مشخص نشده</div>
+</section>
+
+<section class="card" id="lessons">
+<h2>📚 درس‌های ما</h2>
+<div class="item">📐 حسابان</div>
+<div class="item">📊 آمار و احتمال</div>
+<div class="item">📏 هندسه</div>
+<div class="item">📖 ادبیات و نگارش</div>
+<div class="item">🧪 شیمی و آزمایشگاه</div>
+<div class="item">⚡ فیزیک</div>
+<div class="item">🌱 انسان و محیط زیست</div>
+<div class="item">🌍 زمین‌شناسی</div>
+<div class="item">📜 تاریخ</div>
+<div class="item">📘 عربی</div>
+<div class="item">🎨 کار و هنر</div>
+</section>
+
+<section class="card" id="schedule">
+<h2>🗓️ برنامه هفتگی کلاس</h2>
+<p>برنامه مطابق عکس ارسالی شما</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>روز</th><th>زنگ اول</th><th>زنگ دوم</th><th>زنگ سوم</th><th>زنگ چهارم</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>شنبه</th><td>عربی</td><td>شیمی</td><td>دینی و زندگی</td><td>—</td>
+</tr>
+<tr>
+<th>یکشنبه</th><td>فیزیک</td><td>حسابان</td><td>تاریخ معاصر</td><td>هندسه</td>
+</tr>
+<tr>
+<th>دوشنبه</th><td>آمار و احتمال</td><td>شیمی / زبان خارجی</td><td>زمین‌شناسی</td><td>کار و فناوری</td>
+</tr>
+<tr>
+<th>سه‌شنبه</th><td>محیط زیست</td><td>نگارش / مشاوره</td><td>زبان خارجی</td><td>فارسی</td>
+</tr>
+<tr>
+<th>چهارشنبه</th><td>ورزش</td><td>فیزیک</td><td>حسابان</td><td>—</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p style="font-size:12px;color:#8b5e83">توجه: نوشته‌های دست‌نویس عکس در چند خانه کمی نامشخص‌اند؛ قبل از نهایی کردن، آن‌ها را بررسی می‌کنیم.</p>
+</section>
+</main>
+
+<footer>با عشق برای یازدهم ریاضی 💕</footer>
+
+<script>
+function go(id){
+document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+</script>
+</body>
+</html>
