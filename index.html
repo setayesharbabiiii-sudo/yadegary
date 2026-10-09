@@ -7,590 +7,561 @@
 
 <style>
 *{box-sizing:border-box}
-:root{
-  --ink:#392b38;
-  --pink:#e7a1bd;
-  --cream:#fff9fc;
-}
-body{
-  margin:0;
-  font-family:Tahoma,Arial,sans-serif;
-  color:var(--ink);
-  background:#fff9fc;
-}
+:root{--ink:#392b38;--pink:#e7a1bd}
+body{margin:0;font-family:Tahoma,Arial,sans-serif;color:var(--ink);background:#fff9fc}
 button,input{font-family:inherit}
 button{cursor:pointer}
 .hidden{display:none!important}
 
-/* صفحه ورودی */
+/* صفحه ورودی ـ بدون تغییر */
 #welcome{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:24px;
-  overflow:hidden;
-  position:relative;
-  background:
-    radial-gradient(ellipse at 10% 15%,#f8d8e7 0,transparent 35%),
-    radial-gradient(ellipse at 90% 85%,#f5d9e5 0,transparent 36%),
-    linear-gradient(135deg,#fffafc,#fff0f6,#fffafc);
+ min-height:100vh;display:flex;align-items:center;justify-content:center;
+ padding:24px;overflow:hidden;position:relative;
+ background:radial-gradient(ellipse at 10% 15%,#f8d8e7,transparent 35%),
+ radial-gradient(ellipse at 90% 85%,#f5d9e5,transparent 36%),
+ linear-gradient(135deg,#fffafc,#fff0f6,#fffafc)
 }
 .welcome-card{
-  width:min(480px,100%);
-  text-align:center;
-  position:relative;
-  z-index:2;
-  padding:38px 24px 32px;
-  border:1px solid #e8c4d5;
-  border-radius:30px;
-  background:#ffffffd9;
-  box-shadow:0 18px 55px #b86b921c;
+ width:min(480px,100%);text-align:center;position:relative;z-index:2;
+ padding:38px 24px 32px;border:1px solid #e8c4d5;border-radius:30px;
+ background:#ffffffd9;box-shadow:0 18px 55px #b86b921c
 }
-.ornament{
-  color:#c783a1;
-  letter-spacing:8px;
-  font-size:23px;
-}
+.ornament{color:#c783a1;letter-spacing:8px;font-size:23px}
 .logo{
-  width:104px;height:104px;
-  border:1px solid #e8bfd1;
-  border-radius:50%;
-  margin:22px auto;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(145deg,#fff,#fbe5ef);
-  box-shadow:inset 0 0 0 7px #fff8fb,0 7px 20px #dca8c31c;
-  font-size:43px;
+ width:104px;height:104px;border:1px solid #e8bfd1;border-radius:50%;
+ margin:22px auto;display:flex;align-items:center;justify-content:center;
+ background:linear-gradient(145deg,#fff,#fbe5ef);
+ box-shadow:inset 0 0 0 7px #fff8fb,0 7px 20px #dca8c31c;font-size:43px
 }
-.welcome-card h1{
-  font-size:clamp(26px,7vw,36px);
-  margin:10px 0;
-  line-height:1.8;
-}
-.welcome-card .subtitle{
-  color:#947187;
-  font-size:13px;
-  line-height:2.2;
-}
-.welcome-line{
-  width:75px;height:2px;
-  background:#e8b4cb;
-  margin:22px auto;
-}
+.welcome-card h1{font-size:clamp(26px,7vw,36px);margin:10px 0;line-height:1.8}
+.welcome-card .subtitle{color:#947187;font-size:13px;line-height:2.2}
+.welcome-line{width:75px;height:2px;background:#e8b4cb;margin:22px auto}
 .enter-btn{
-  border:0;
-  color:white;
-  font-size:15px;
-  padding:15px 28px;
-  width:min(270px,100%);
-  border-radius:30px;
-  background:linear-gradient(110deg,#ca7f9f,#e3a4bf,#bf7598);
-  box-shadow:0 8px 18px #ca7f9f3b;
-  transition:.2s;
+ border:0;color:white;font-size:15px;padding:15px 28px;width:min(270px,100%);
+ border-radius:30px;background:linear-gradient(110deg,#ca7f9f,#e3a4bf,#bf7598);
+ box-shadow:0 8px 18px #ca7f9f3b;transition:.2s
 }
 .enter-btn:hover{transform:translateY(-2px)}
 .welcome-note{font-size:11px;color:#b18da0;margin-top:23px}
-.corner{
-  position:absolute;
-  color:#dba5bf;
-  opacity:.55;
-  font-size:clamp(42px,10vw,85px);
-}
-.corner.one{top:5%;left:6%}
-.corner.two{bottom:4%;right:5%}
+.corner{position:absolute;color:#dba5bf;opacity:.55;font-size:clamp(42px,10vw,85px)}
+.corner.one{top:5%;left:6%}.corner.two{bottom:4%;right:5%}
 .corner.three{top:12%;right:7%;font-size:36px}
 .corner.four{bottom:12%;left:7%;font-size:38px}
 
-/* سربرگ صفحه کلاس‌ها */
+/* سربرگ و صفحه کلاس‌ها ـ همان طرح قبلی */
 header{
-  text-align:center;
-  padding:25px 15px 22px;
-  background:linear-gradient(125deg,#fbe1ed,#fff8fb,#f5dce8);
-  border-bottom:1px solid #efcede;
-  position:relative;
-  overflow:hidden;
+ text-align:center;padding:25px 15px 22px;
+ background:linear-gradient(125deg,#fbe1ed,#fff8fb,#f5dce8);
+ border-bottom:1px solid #efcede;position:relative;overflow:hidden
 }
 header:before,header:after{
-  content:"❀";
-  position:absolute;
-  font-size:65px;
-  color:#dba1ba;
-  opacity:.23;
-  top:8px;
+ content:"❀";position:absolute;font-size:65px;color:#dba1ba;opacity:.23;top:8px
 }
-header:before{right:5%}
-header:after{left:5%}
+header:before{right:5%}header:after{left:5%}
 header h1{margin:7px 0;font-size:clamp(23px,6vw,31px)}
 header p{font-size:12px;color:#98758a;margin:8px 0 0}
 .header-flower{font-size:24px;color:#c783a1}
-
 main{width:min(1000px,100%);margin:auto;padding:24px 15px 45px}
 .section-heading{text-align:center;margin:6px 0 8px;font-size:20px}
 .section-description{text-align:center;color:#907d89;font-size:12px;line-height:2;margin:0 0 23px}
 
-/* کارت‌های رشته */
-.class-grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:14px;
-}
+.class-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .class-card{
-  --accent:#c78ba8;
-  --light:#fff0f6;
-  --dark:#74475f;
-  position:relative;
-  min-width:0;
-  min-height:174px;
-  overflow:hidden;
-  text-align:right;
-  padding:17px 15px;
-  border:1px solid var(--accent);
-  border-radius:21px;
-  color:var(--ink);
-  background:
-    radial-gradient(circle at 100% 0%,var(--light),transparent 75%),
-    #fff;
-  box-shadow:0 7px 20px #5733470c;
-  transition:transform .2s,box-shadow .2s;
+ --accent:#c78ba8;--light:#fff0f6;--dark:#74475f;
+ position:relative;min-width:0;min-height:174px;overflow:hidden;text-align:right;
+ padding:17px 15px;border:1px solid var(--accent);border-radius:21px;
+ color:var(--ink);
+ background:radial-gradient(circle at 100% 0%,var(--light),transparent 75%),#fff;
+ box-shadow:0 7px 20px #5733470c;transition:transform .2s,box-shadow .2s
 }
-.class-card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 12px 24px #57334716;
-}
+.class-card:hover{transform:translateY(-4px);box-shadow:0 12px 24px #57334716}
 .class-card:after{
-  content:"";
-  position:absolute;
-  width:95px;height:95px;
-  border:1px solid var(--accent);
-  border-radius:50%;
-  left:-32px;bottom:-43px;
-  opacity:.23;
+ content:"";position:absolute;width:95px;height:95px;border:1px solid var(--accent);
+ border-radius:50%;left:-32px;bottom:-43px;opacity:.23
 }
-.class-card .card-top{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:8px;
-}
+.card-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
 .card-symbol{
-  width:47px;height:47px;
-  display:flex;align-items:center;justify-content:center;
-  border:1px solid var(--accent);
-  border-radius:15px;
-  background:#ffffffc9;
-  color:var(--dark);
-  font-size:25px;
-  flex-shrink:0;
+ width:47px;height:47px;display:flex;align-items:center;justify-content:center;
+ border:1px solid var(--accent);border-radius:15px;background:#ffffffc9;
+ color:var(--dark);font-size:25px;flex-shrink:0
 }
-.card-grade{
-  font-size:10px;
-  color:var(--dark);
-  border:1px solid var(--accent);
-  padding:6px 8px;
-  border-radius:20px;
-  background:#ffffffa8;
-}
+.card-grade{font-size:10px;color:var(--dark);border:1px solid var(--accent);
+ padding:6px 8px;border-radius:20px;background:#ffffffa8}
 .class-card h3{font-size:16px;margin:15px 0 7px}
-.class-card .track-name{font-size:10px;color:var(--dark)}
-.card-pattern{
-  color:var(--dark);
-  opacity:.32;
-  font-size:14px;
-  letter-spacing:3px;
-  margin-top:13px;
-  white-space:nowrap;
-}
-.math{
-  --accent:#d4a400;
-  --light:#fff1a8;
-  --dark:#7e6100;
-}
-.science{
-  --accent:#ce5360;
-  --light:#ffe0e3;
-  --dark:#8b2737;
-}
-.humanities{
-  --accent:#42845e;
-  --light:#d9f0df;
-  --dark:#285a3b;
-}
+.track-name{font-size:10px;color:var(--dark)}
+.card-pattern{color:var(--dark);opacity:.48;font-size:14px;letter-spacing:3px;margin-top:13px;white-space:nowrap}
+.math{--accent:#d4a400;--light:#fff1a8;--dark:#7e6100}
+.science{--accent:#ce5360;--light:#ffe0e3;--dark:#8b2737}
+.humanities{--accent:#42845e;--light:#d9f0df;--dark:#285a3b}
 
-/* تزئینات داخل پنجره کلاس */
+/* سربرگ داخل کلاس */
 .class-banner{
-  --accent:#d4a400;
-  --light:#fff1a8;
-  --dark:#7e6100;
-  border:1px solid var(--accent);
-  border-radius:24px;
-  padding:22px 19px;
-  background:
-    radial-gradient(circle at 95% 5%,var(--light),transparent 50%),
-    linear-gradient(120deg,#fff,var(--light));
-  position:relative;
-  overflow:hidden;
+ --accent:#d4a400;--light:#fff1a8;--dark:#7e6100;
+ border:1px solid var(--accent);border-radius:24px;padding:22px 19px;
+ background:radial-gradient(circle at 95% 5%,var(--light),transparent 50%),
+ linear-gradient(120deg,#fff,var(--light));position:relative;overflow:hidden;margin-bottom:18px
 }
 .class-banner .banner-decoration{
-  font-size:clamp(25px,7vw,42px);
-  letter-spacing:4px;
-  color:var(--dark);
-  opacity:.65;
-  margin-bottom:15px;
-  white-space:normal;
+ font-size:clamp(25px,7vw,42px);letter-spacing:4px;
+ color:var(--dark);opacity:.65;margin-bottom:15px;white-space:normal
 }
 .class-banner h2{margin:0 0 8px;font-size:25px}
 .class-banner p{margin:0;font-size:12px;line-height:2;color:var(--dark)}
+.class-banner.math{--accent:#d4a400;--light:#fff4c7;--dark:#7e6100}
+.class-banner.science{--accent:#ce5360;--light:#ffebed;--dark:#8b2737}
+.class-banner.humanities{--accent:#42845e;--light:#e6f5e9;--dark:#285a3b}
+
+/* چهار مربع اصلی */
+.menu-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.menu-tile{
+ --accent:#d4a400;--light:#fff4c7;--dark:#7e6100;
+ position:relative;overflow:hidden;min-height:145px;padding:18px 14px;
+ border:1px solid var(--accent);border-radius:20px;text-align:right;color:var(--ink);
+ background:linear-gradient(145deg,#fff,var(--light));
+ box-shadow:0 6px 18px #5033440b;transition:.2s
+}
+.menu-tile:hover{transform:translateY(-3px);box-shadow:0 10px 23px #50334417}
+.menu-tile .tile-icon{
+ display:flex;align-items:center;justify-content:center;
+ width:45px;height:45px;border:1px solid var(--accent);border-radius:14px;
+ background:#ffffffbd;color:var(--dark);font-size:23px;margin-bottom:13px
+}
+.menu-tile strong{display:block;font-size:14px;margin-bottom:8px}
+.menu-tile small{font-size:10px;color:var(--dark)}
+.menu-tile:after{
+ content:"";position:absolute;width:70px;height:70px;border-radius:50%;
+ border:1px solid var(--accent);left:-24px;bottom:-32px;opacity:.35
+}
+.menu-tile.math{--accent:#d4a400;--light:#fff4c7;--dark:#7e6100}
+.menu-tile.science{--accent:#ce5360;--light:#ffebed;--dark:#8b2737}
+.menu-tile.humanities{--accent:#42845e;--light:#e6f5e9;--dark:#285a3b}
+
+/* صفحات داخلی */
 .back-btn{
-  border:1px solid #ead5e0;
-  background:#fff;
-  color:#755468;
-  border-radius:25px;
-  padding:11px 17px;
-  margin-bottom:16px;
+ border:1px solid #ead5e0;background:#fff;color:#755468;
+ border-radius:25px;padding:11px 17px;margin-bottom:16px
 }
+.subpage-heading{
+ text-align:center;margin:5px 0 20px;font-size:21px
+}
+.subpage-caption{text-align:center;color:#987d8d;font-size:12px;line-height:2;margin-top:-10px;margin-bottom:20px}
 .info-card{
-  margin-top:15px;
-  border:1px solid #eee0e8;
-  background:#fff;
-  border-radius:19px;
-  padding:18px 15px;
-  box-shadow:0 5px 16px #59334a08;
+ --accent:#d4a400;--light:#fff4c7;--dark:#7e6100;
+ margin-top:15px;border:1px solid #eee0e8;background:#fff;
+ border-radius:19px;padding:18px 15px;box-shadow:0 5px 16px #59334a08
 }
-.info-title{
-  display:flex;align-items:center;gap:9px;
-  margin:0 0 15px;font-size:16px;
+.info-card.math{--accent:#d4a400;--light:#fff4c7;--dark:#7e6100}
+.info-card.science{--accent:#ce5360;--light:#ffebed;--dark:#8b2737}
+.info-card.humanities{--accent:#42845e;--light:#e6f5e9;--dark:#285a3b}
+.info-title{display:flex;align-items:center;gap:9px;margin:0 0 15px;font-size:16px;color:var(--dark)}
+.mini-icon{
+ display:flex;align-items:center;justify-content:center;width:36px;height:36px;
+ border-radius:12px;background:var(--light);color:var(--dark);
+ border:1px solid var(--accent);font-size:18px;flex-shrink:0
 }
-.info-title .mini-icon{
-  display:flex;align-items:center;justify-content:center;
-  width:36px;height:36px;border-radius:12px;
-  background:var(--light);color:var(--dark);
-  border:1px solid var(--accent);
-  font-size:18px;
-}
-.class-banner.math,.info-card.math{--accent:#d4a400;--light:#fff4c7;--dark:#7e6100}
-.class-banner.science,.info-card.science{--accent:#ce5360;--light:#ffebed;--dark:#8b2737}
-.class-banner.humanities,.info-card.humanities{--accent:#42845e;--light:#e6f5e9;--dark:#285a3b}
-.class-banner{margin-bottom:15px}
-.info-card .info-title{color:var(--dark)}
-.info-card .mini-icon{flex-shrink:0}
 .table-wrap{overflow-x:auto}
 table{width:100%;border-collapse:collapse;font-size:12px}
 th,td{padding:12px 8px;border:1px solid #eee4e9;text-align:center;line-height:1.8}
 th{background:var(--light);color:var(--dark)}
-.student-lock{
-  padding:16px;
-  border:1px dashed #d8afc2;
-  background:#fff9fc;
-  border-radius:15px;
+
+/* کارت‌های درس و دبیر */
+.item-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.item-tile{
+ width:100%;min-width:0;text-align:right;padding:15px 12px;
+ border:1px solid var(--accent);border-radius:15px;background:var(--light);
+ color:var(--dark);transition:.18s
 }
+.item-tile:hover{transform:translateY(-2px);box-shadow:0 5px 14px #49304410}
+.item-tile .item-symbol{font-size:19px;display:block;margin-bottom:9px}
+.item-tile strong{font-size:12px;line-height:1.9;display:block}
+.item-tile small{display:block;font-size:10px;margin-top:5px;opacity:.8;line-height:1.8}
+.detail-panel{
+ margin-top:17px;padding:19px;border-radius:17px;
+ border:1px solid var(--accent);
+ background:linear-gradient(145deg,#fff,var(--light));
+ animation:appear .2s ease
+}
+.detail-panel h3{font-size:18px;margin:0 0 10px;color:var(--dark)}
+.detail-panel p{font-size:13px;line-height:2;margin:5px 0}
+.detail-panel .teacher-name{font-size:15px;font-weight:bold;color:var(--dark)}
+@keyframes appear{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+
+.student-lock{padding:16px;border:1px dashed #d8afc2;background:#fff9fc;border-radius:15px}
 .student-lock p{font-size:12px;line-height:2;margin:0 0 13px}
 .password-row{display:flex;gap:8px}
-.password-row input{
-  min-width:0;width:100%;
-  border:1px solid #e3ced9;
-  border-radius:11px;padding:12px;
-  font-size:16px;
-}
-.password-row button{
-  border:0;border-radius:11px;
-  background:var(--accent);color:white;padding:0 17px;
-}
+.password-row input{min-width:0;width:100%;border:1px solid #e3ced9;border-radius:11px;padding:12px;font-size:16px}
+.password-row button{border:0;border-radius:11px;background:var(--accent);color:white;padding:0 17px}
 .student-list{padding-right:22px;line-height:2.5;font-size:13px}
 .message{font-size:12px;margin-top:10px}
+.empty-note{font-size:13px;line-height:2;color:#8a7684}
+.day-card{border:1px solid var(--accent);border-radius:15px;overflow:hidden;margin-bottom:12px}
+.day-title{padding:12px 14px;background:var(--light);color:var(--dark);font-weight:bold;font-size:13px}
+.day-lessons{padding:12px;display:flex;flex-wrap:wrap;gap:8px}
+.lesson-chip{font-size:11px;padding:9px 11px;border:1px solid #eee0e8;background:#fff;border-radius:20px}
 footer{text-align:center;padding:22px 12px;color:#a18395;font-size:11px}
 @media(min-width:650px){
-  .class-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
-  .class-card{min-height:190px;padding:19px}
+ .class-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+ .class-card{min-height:190px;padding:19px}
+ .menu-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+ .menu-tile{min-height:175px}
+ .item-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
 </style>
 </head>
 
 <body>
 
-<!-- صفحه ورودی -->
 <section id="welcome">
-  <span class="corner one">❀</span>
-  <span class="corner two">✿</span>
-  <span class="corner three">✧</span>
-  <span class="corner four">❁</span>
-
-  <div class="welcome-card">
-    <div class="ornament">✦ ❀ ✦</div>
-    <div class="logo">🏫</div>
-    <div class="ornament">به دنیای یادگاری خوش آمدید</div>
-    <h1>دبیرستان یادگاری</h1>
-    <p class="subtitle">
-      جایی برای یادگیری، رشد و ساختن خاطره‌های ماندگار
-    </p>
-    <div class="welcome-line"></div>
-    <button class="enter-btn" onclick="enterSchool()">
-      ورود به مدرسه　❀
-    </button>
-    <div class="welcome-note">✧ علم، دوستی، آینده ✧</div>
-  </div>
+ <span class="corner one">❀</span><span class="corner two">✿</span>
+ <span class="corner three">✧</span><span class="corner four">❁</span>
+ <div class="welcome-card">
+  <div class="ornament">✦ ❀ ✦</div>
+  <div class="logo">🏫</div>
+  <div class="ornament">به دنیای یادگاری خوش آمدید</div>
+  <h1>دبیرستان یادگاری</h1>
+  <p class="subtitle">جایی برای یادگیری، رشد و ساختن خاطره‌های ماندگار</p>
+  <div class="welcome-line"></div>
+  <button class="enter-btn" onclick="enterSchool()">ورود به مدرسه　❀</button>
+  <div class="welcome-note">✧ علم، دوستی، آینده ✧</div>
+ </div>
 </section>
 
-<!-- صفحه انتخاب کلاس‌ها -->
 <div id="school" class="hidden">
-  <header>
-    <div class="header-flower">❀　✧　❀</div>
-    <h1>دبیرستان یادگاری</h1>
-    <p>هر کلاس، دنیای مخصوص خودش را دارد 🌷</p>
-  </header>
+ <header>
+  <div class="header-flower">❀　✧　❀</div>
+  <h1>دبیرستان یادگاری</h1>
+  <p>هر کلاس، دنیای مخصوص خودش را دارد 🌷</p>
+ </header>
 
-  <main>
-    <section id="homePage">
-      <h2 class="section-heading">کلاس خودت را انتخاب کن</h2>
-      <p class="section-description">
-        وارد دنیای رشته‌ات شو و برنامه و اطلاعات کلاس را ببین.
-      </p>
-      <div id="classGrid" class="class-grid"></div>
-    </section>
+ <main>
+  <section id="homePage">
+   <h2 class="section-heading">کلاس خودت را انتخاب کن</h2>
+   <p class="section-description">وارد دنیای رشته‌ات شو و اطلاعات کلاس را ببین.</p>
+   <div id="classGrid" class="class-grid"></div>
+  </section>
 
-    <section id="classPage" class="hidden">
-      <button class="back-btn" onclick="goHome()">← بازگشت به کلاس‌ها</button>
+  <section id="classPage" class="hidden">
+   <button class="back-btn" onclick="goHome()">← بازگشت به کلاس‌ها</button>
+   <div id="classBanner" class="class-banner">
+    <div id="bannerDecoration" class="banner-decoration"></div>
+    <h2 id="classTitle"></h2><p id="classSubtitle"></p>
+   </div>
 
-      <div id="classBanner" class="class-banner">
-        <div id="bannerDecoration" class="banner-decoration"></div>
-        <h2 id="classTitle"></h2>
-        <p id="classSubtitle"></p>
-      </div>
+   <div id="menuPage">
+    <h2 class="section-heading">بخش موردنظرت را انتخاب کن ✨</h2>
+    <p class="section-description">اطلاعات کلاس در چهار بخش جداگانه قرار دارد.</p>
+    <div id="menuGrid" class="menu-grid"></div>
+   </div>
 
-      <div id="lessonCard" class="info-card">
-        <h3 class="info-title"><span class="mini-icon">📚</span> درس‌ها و دبیران</h3>
-        <div id="lessons"></div>
-      </div>
-
-      <div id="scheduleCard" class="info-card">
-        <h3 class="info-title"><span class="mini-icon">🗓️</span> برنامهٔ هفتگی</h3>
-        <div id="schedule"></div>
-      </div>
-
-      <div id="studentCard" class="info-card">
-        <h3 class="info-title"><span class="mini-icon">🎓</span> دانش‌آموزان کلاس</h3>
-        <div id="studentArea"></div>
-      </div>
-    </section>
-  </main>
-  <footer>دبیرستان یادگاری · با عشق به آینده ✿</footer>
+   <div id="subPage" class="hidden">
+    <button class="back-btn" onclick="backToMenu()">← بازگشت به بخش‌های کلاس</button>
+    <h2 id="subTitle" class="subpage-heading"></h2>
+    <p id="subCaption" class="subpage-caption"></p>
+    <div id="subContent"></div>
+   </div>
+  </section>
+ </main>
+ <footer>دبیرستان یادگاری · با عشق به آینده ✿</footer>
 </div>
 
 <script>
-const classes = {
-  "10s": {
-    name:"دهم تجربی",track:"science",grade:"دهم",
-    icon:"🧬",pattern:"⚗　🧬　⚛　🧪",
-    password:"2222",students:[],lessons:[],schedule:{}
-  },
-  "11s": {
-    name:"یازدهم تجربی",track:"science",grade:"یازدهم",
-    icon:"⚗️",pattern:"🧬　DNA　⚛　H₂O",
-    password:"4444",students:[],lessons:[],schedule:{}
-  },
-  "12s": {
-    name:"دوازدهم تجربی",track:"science",grade:"دوازدهم",
-    icon:"🔬",pattern:"⚛　🧪　🧬　O₂",
-    password:"6666",students:[],lessons:[],schedule:{}
-  },
-  "10m": {
-    name:"دهم ریاضی",track:"math",grade:"دهم",
-    icon:"📐",pattern:"∑　π　√x　x²　∞",
-    password:"3333",students:[],lessons:[],schedule:{}
-  },
-  "11m": {
-    name:"یازدهم ریاضی",track:"math",grade:"یازدهم",
-    icon:"∑",pattern:"∫　π　√　x²　∠",
-    password:"5555",
-    students:["ستایش","نازنین","نیایش","ناسیه","فاطمه",
-      "حسنی","هستی","حوریه","الیسا","اندیا"],
-    lessons:[
-      ["حسابان","خانم حیدری"],["آمار و احتمال","خانم حیدری"],
-      ["هندسه","خانم حیدری"],["ادبیات","خانم نوروزی"],
-      ["نگارش","خانم نوروزی"],["زمین‌شناسی","خانم یادگارفرد"],
-      ["تاریخ","خانم یادگارفرد"],["انسان و محیط زیست","خانم یادگارفرد"],
-      ["فیزیک","خانم فاطمی"],["زبان","نامشخص"],["شیمی","نامشخص"],
-      ["دین و زندگی","نامشخص"],["کار و هنر","خانم دهقان"],
-      ["عربی","خانم دهقان"],["ورزش","نامشخص"]
-    ],
-    schedule:{
-      "شنبه":["عربی","شیمی","دین و زندگی"],
-      "یکشنبه":["فیزیک","حسابان","تاریخ","هندسه"],
-      "دوشنبه":["آمار و احتمال","زبان یا شیمی","زمین‌شناسی","کار و هنر"],
-      "سه‌شنبه":["انسان و محیط زیست","نگارش","زبان","ادبیات"],
-      "چهارشنبه":["ورزش","فیزیک","حسابان"]
-    }
-  },
-  "10h": {
-    name:"دهم انسانی",track:"humanities",grade:"دهم",
-    icon:"📖",pattern:"❝　✒　📜　📚",
-    password:"1111",students:[],lessons:[],schedule:{}
-  },
-  "11h": {
-    name:"یازدهم انسانی",track:"humanities",grade:"یازدهم",
-    icon:"✒️",pattern:"📚　❝　✍　❞",
-    password:"7777",students:[],lessons:[],schedule:{}
-  },
-  "12h": {
-    name:"دوازدهم انسانی",track:"humanities",grade:"دوازدهم",
-    icon:"📜",pattern:"✒　📖　❝　✧",
-    password:"8888",students:[],lessons:[],schedule:{}
+const classes={
+ "10s":{
+  name:"دهم تجربی",track:"science",grade:"دهم",icon:"🧬",
+  pattern:"⚗　🧬　⚛　🧪",password:"2222",
+  students:[],lessons:[],schedule:{}
+ },
+ "11s":{
+  name:"یازدهم تجربی",track:"science",grade:"یازدهم",icon:"⚗️",
+  pattern:"🧬　DNA　⚛　H₂O",password:"4444",
+  students:[],lessons:[],schedule:{}
+ },
+ "12s":{
+  name:"دوازدهم تجربی",track:"science",grade:"دوازدهم",icon:"🔬",
+  pattern:"⚛　🧪　🧬　O₂",password:"6666",
+  students:[],lessons:[],schedule:{}
+ },
+ "10m":{
+  name:"دهم ریاضی",track:"math",grade:"دهم",icon:"📐",
+  pattern:"∑　π　√x　x²　∞",password:"3333",
+  students:[],lessons:[],schedule:{}
+ },
+ "11m":{
+  name:"یازدهم ریاضی",track:"math",grade:"یازدهم",icon:"∑",
+  pattern:"∫　π　√　x²　∠",password:"5555",
+  students:["ستایش","نازنین","نیایش","ناسیه","فاطمه","حسنی","هستی","حوریه","الیسا","اندیا"],
+  lessons:[
+   ["حسابان","خانم حیدری"],["آمار و احتمال","خانم حیدری"],
+   ["هندسه","خانم حیدری"],["ادبیات","خانم نوروزی"],
+   ["نگارش","خانم نوروزی"],["زمین‌شناسی","خانم یادگارفرد"],
+   ["تاریخ","خانم یادگارفرد"],["انسان و محیط زیست","خانم یادگارفرد"],
+   ["فیزیک","خانم فاطمی"],["زبان","نامشخص"],["شیمی","نامشخص"],
+   ["دین و زندگی","نامشخص"],["کار و هنر","خانم دهقان"],
+   ["عربی","خانم دهقان"],["ورزش","نامشخص"]
+  ],
+  schedule:{
+   "شنبه":["عربی","شیمی","دین و زندگی"],
+   "یکشنبه":["فیزیک","حسابان","تاریخ","هندسه"],
+   "دوشنبه":["آمار و احتمال","زبان یا شیمی","زمین‌شناسی","کار و هنر"],
+   "سه‌شنبه":["انسان و محیط زیست","نگارش","زبان","ادبیات"],
+   "چهارشنبه":["ورزش","فیزیک","حسابان"]
   }
+ },
+ "10h":{
+  name:"دهم انسانی",track:"humanities",grade:"دهم",icon:"📖",
+  pattern:"❝　✒　📜　📚",password:"1111",
+  students:[],lessons:[],schedule:{}
+ },
+ "11h":{
+  name:"یازدهم انسانی",track:"humanities",grade:"یازدهم",icon:"✒️",
+  pattern:"📚　❝　✍　❞",password:"7777",
+  students:[],lessons:[],schedule:{}
+ },
+ "12h":{
+  name:"دوازدهم انسانی",track:"humanities",grade:"دوازدهم",icon:"📜",
+  pattern:"✒　📖　❝　✧",password:"8888",
+  students:[],lessons:[],schedule:{}
+ }
 };
 
-const trackNames={
-  math:"ریاضی‌فیزیک",
-  science:"علوم تجربی",
-  humanities:"علوم انسانی"
-};
+const trackNames={math:"ریاضی‌فیزیک",science:"علوم تجربی",humanities:"علوم انسانی"};
 const bannerPatterns={
-  math:"∑　π　√x　x²　∫　∞　∠",
-  science:"⚗　🧬　⚛　H₂O　O₂　🔬",
-  humanities:"❝　📖　✒　شعر　کتاب　❞"
+ math:"∑　π　√x　x²　∫　∞　∠",
+ science:"⚗　🧬　⚛　H₂O　O₂　🔬",
+ humanities:"❝　📖　✒　شعر　کتاب　❞"
 };
+const menuItems=[
+ {id:"students",title:"دانش‌آموزان",icon:"🎓",desc:"فهرست دانش‌آموزان"},
+ {id:"teachers",title:"دبیران",icon:"👩🏻‍🏫",desc:"نام دبیران و درس‌هایشان"},
+ {id:"lessons",title:"درس‌ها",icon:"📚",desc:"انتخاب درس و مشاهدهٔ دبیر"},
+ {id:"schedule",title:"برنامهٔ کلاسی",icon:"🗓️",desc:"برنامهٔ هفتگی کلاس"}
+];
+
 let currentId=null;
 let unlocked={};
 
 function enterSchool(){
-  document.getElementById("welcome").classList.add("hidden");
-  document.getElementById("school").classList.remove("hidden");
-  window.scrollTo(0,0);
+ document.getElementById("welcome").classList.add("hidden");
+ document.getElementById("school").classList.remove("hidden");
+ window.scrollTo(0,0);
 }
 
 function createButtons(){
-  const grid=document.getElementById("classGrid");
-  grid.innerHTML="";
-  Object.entries(classes).forEach(([id,c])=>{
-    const btn=document.createElement("button");
-    btn.className="class-card "+c.track;
-    btn.innerHTML=`
-      <div class="card-top">
-        <span class="card-symbol">${c.icon}</span>
-        <span class="card-grade">${c.grade}</span>
-      </div>
-      <h3>${c.name}</h3>
-      <div class="track-name">${trackNames[c.track]}</div>
-      <div class="card-pattern">${c.pattern}</div>
-    `;
-    btn.onclick=()=>openClass(id);
-    grid.appendChild(btn);
-  });
+ const grid=document.getElementById("classGrid");
+ Object.entries(classes).forEach(([id,c])=>{
+  const btn=document.createElement("button");
+  btn.className="class-card "+c.track;
+  btn.innerHTML=`<div class="card-top"><span class="card-symbol">${c.icon}</span>
+   <span class="card-grade">${c.grade}</span></div>
+   <h3>${c.name}</h3><div class="track-name">${trackNames[c.track]}</div>
+   <div class="card-pattern">${c.pattern}</div>`;
+  btn.onclick=()=>openClass(id);
+  grid.appendChild(btn);
+ });
 }
 
 function openClass(id){
-  currentId=id;
-  const c=classes[id];
-  document.getElementById("homePage").classList.add("hidden");
-  document.getElementById("classPage").classList.remove("hidden");
-
-  document.getElementById("classBanner").className="class-banner "+c.track;
-  document.getElementById("bannerDecoration").textContent=bannerPatterns[c.track];
-  document.getElementById("classTitle").textContent=c.name;
-  document.getElementById("classSubtitle").textContent=
-    "فضای اختصاصی "+trackNames[c.track]+" · "+c.grade;
-
-  ["lessonCard","scheduleCard","studentCard"].forEach(id=>
-    document.getElementById(id).className="info-card "+c.track
-  );
-
-  showLessons(c);
-  showSchedule(c);
-  showStudents(c);
-  window.scrollTo(0,0);
+ currentId=id;
+ const c=classes[id];
+ document.getElementById("homePage").classList.add("hidden");
+ document.getElementById("classPage").classList.remove("hidden");
+ document.getElementById("menuPage").classList.remove("hidden");
+ document.getElementById("subPage").classList.add("hidden");
+ document.getElementById("classBanner").className="class-banner "+c.track;
+ document.getElementById("bannerDecoration").textContent=bannerPatterns[c.track];
+ document.getElementById("classTitle").textContent=c.name;
+ document.getElementById("classSubtitle").textContent="فضای اختصاصی "+trackNames[c.track]+" · "+c.grade;
+ createMenu();
+ window.scrollTo(0,0);
 }
 
-function showLessons(c){
-  const area=document.getElementById("lessons");
-  if(!c.lessons.length){
-    area.innerHTML="<p>اطلاعات درس‌ها و دبیران این کلاس هنوز وارد نشده است.</p>";
-    return;
-  }
-  area.innerHTML=`<div class="table-wrap"><table>
-    <tr><th>درس</th><th>نام دبیر</th></tr>
-    ${c.lessons.map(([lesson,teacher])=>
-      `<tr><td>${escapeHTML(lesson)}</td><td>${escapeHTML(teacher)}</td></tr>`
-    ).join("")}
-  </table></div>`;
+function createMenu(){
+ const grid=document.getElementById("menuGrid");
+ grid.innerHTML="";
+ menuItems.forEach(item=>{
+  const btn=document.createElement("button");
+  btn.className="menu-tile "+classes[currentId].track;
+  btn.innerHTML=`<span class="tile-icon">${item.icon}</span>
+   <strong>${item.title}</strong><small>${item.desc}</small>`;
+  btn.onclick=()=>openSection(item.id);
+  grid.appendChild(btn);
+ });
 }
 
-function showSchedule(c){
-  const area=document.getElementById("schedule");
-  const days=Object.entries(c.schedule);
-  if(!days.length){
-    area.innerHTML="<p>برنامهٔ هفتگی این کلاس هنوز وارد نشده است.</p>";
-    return;
-  }
-  area.innerHTML=`<div class="table-wrap"><table>
-    <tr><th>روز</th><th>درس‌ها</th></tr>
-    ${days.map(([day,lessons])=>
-      `<tr><td>${escapeHTML(day)}</td><td>${lessons.map(escapeHTML).join("، ")}</td></tr>`
-    ).join("")}
-  </table></div>`;
+function openSection(section){
+ const c=classes[currentId];
+ const item=menuItems.find(x=>x.id===section);
+ document.getElementById("menuPage").classList.add("hidden");
+ document.getElementById("subPage").classList.remove("hidden");
+ document.getElementById("subTitle").textContent=item.icon+" "+item.title;
+ document.getElementById("subCaption").textContent=c.name+" · "+item.desc;
+ renderSection(section,c);
+ window.scrollTo(0,0);
 }
 
-function showStudents(c){
-  const area=document.getElementById("studentArea");
-  if(unlocked[currentId]){
-    renderStudents(c);
-    return;
-  }
-  area.innerHTML=`
-    <div class="student-lock">
-      <p>🔐 برای دیدن اسامی دانش‌آموزان، رمز مخصوص این کلاس را وارد کن.</p>
-      <div class="password-row">
-        <input id="classPassword" type="password" inputmode="numeric"
-          autocomplete="off" placeholder="رمز کلاس" aria-label="رمز کلاس">
-        <button onclick="checkPassword()">ورود</button>
-      </div>
-      <div id="passwordMessage" class="message"></div>
-    </div>`;
-  document.getElementById("classPassword").addEventListener("keydown",e=>{
-    if(e.key==="Enter")checkPassword();
+function backToMenu(){
+ document.getElementById("subPage").classList.add("hidden");
+ document.getElementById("menuPage").classList.remove("hidden");
+ window.scrollTo(0,0);
+}
+
+function renderSection(section,c){
+ const area=document.getElementById("subContent");
+ area.innerHTML="";
+ if(section==="students")return showStudents(c,area);
+ if(section==="teachers")return showTeachers(c,area);
+ if(section==="lessons")return showLessons(c,area);
+ if(section==="schedule")return showSchedule(c,area);
+}
+
+function makeCard(title,icon,detail,click){
+ const btn=document.createElement("button");
+ btn.className="item-tile";
+ btn.innerHTML=`<span class="item-symbol">${icon}</span><strong>${escapeHTML(title)}</strong><small>${escapeHTML(detail||"برای مشاهده انتخاب کن")}</small>`;
+ btn.onclick=click;
+ return btn;
+}
+
+function makeGrid(area){
+ const grid=document.createElement("div");
+ grid.className="item-grid";
+ area.appendChild(grid);
+ return grid;
+}
+
+function makeDetail(area,title,lines){
+ let panel=area.querySelector(".detail-panel");
+ if(!panel){
+  panel=document.createElement("div");
+  panel.className="detail-panel";
+  area.appendChild(panel);
+ }
+ panel.innerHTML="";
+ const h=document.createElement("h3");
+ h.textContent=title;
+ panel.appendChild(h);
+ lines.forEach(line=>{
+  const p=document.createElement("p");
+  p.textContent=line;
+  panel.appendChild(p);
+ });
+ panel.scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+
+function showLessons(c,area){
+ if(!c.lessons.length){
+  area.innerHTML='<p class="empty-note">فهرست درس‌های این کلاس هنوز ثبت نشده است.</p>';
+  return;
+ }
+ const grid=makeGrid(area);
+ c.lessons.forEach(([lesson,teacher])=>{
+  grid.appendChild(makeCard(lesson,"📖","برای دیدن نام دبیر بزن",()=>{
+   makeDetail(area,lesson,["دبیر این درس: "+teacher]);
+  }));
+ });
+}
+
+function showTeachers(c,area){
+ if(!c.lessons.length){
+  area.innerHTML='<p class="empty-note">اطلاعات دبیران این کلاس هنوز ثبت نشده است.</p>';
+  return;
+ }
+ const teacherMap={};
+ c.lessons.forEach(([lesson,teacher])=>{
+  if(!teacherMap[teacher])teacherMap[teacher]=[];
+  teacherMap[teacher].push(lesson);
+ });
+ const grid=makeGrid(area);
+ Object.entries(teacherMap).forEach(([teacher,lessons])=>{
+  grid.appendChild(makeCard(teacher,"👩🏻‍🏫","برای دیدن درس‌ها بزن",()=>{
+   makeDetail(area,teacher,["درس‌های این دبیر: "+lessons.join("، ")]);
+  }));
+ });
+}
+
+function showStudents(c,area){
+ if(unlocked[currentId])return renderStudents(c,area);
+ const box=document.createElement("div");
+ box.className="student-lock";
+ box.innerHTML=`<p>🔐 برای مشاهدهٔ اسامی دانش‌آموزان، رمز مخصوص این کلاس را وارد کن.</p>
+  <div class="password-row"><input id="classPassword" type="password" inputmode="numeric" autocomplete="off" placeholder="رمز کلاس" aria-label="رمز کلاس">
+  <button id="unlockBtn">ورود</button></div><div id="passwordMessage" class="message"></div>`;
+ area.appendChild(box);
+ box.querySelector("button").onclick=()=>checkPassword(c,area);
+ box.querySelector("input").addEventListener("keydown",e=>{
+  if(e.key==="Enter")checkPassword(c,area);
+ });
+}
+
+function checkPassword(c,area){
+ const input=document.getElementById("classPassword");
+ const message=document.getElementById("passwordMessage");
+ if(input.value===c.password){
+  unlocked[currentId]=true;
+  renderStudents(c,area);
+ }else{
+  message.textContent="رمز واردشده درست نیست؛ دوباره امتحان کن.";
+  message.style.color="#c03945";
+  input.value="";
+ }
+}
+
+function renderStudents(c,area){
+ area.innerHTML="";
+ if(!c.students.length){
+  area.innerHTML='<p class="empty-note">فهرست دانش‌آموزان این کلاس هنوز ثبت نشده است.</p>';
+  return;
+ }
+ const card=document.createElement("div");
+ card.className="info-card "+c.track;
+ const list=document.createElement("ol");
+ list.className="student-list";
+ c.students.forEach(name=>{
+  const li=document.createElement("li");
+  li.textContent=name;
+  list.appendChild(li);
+ });
+ card.appendChild(list);
+ area.appendChild(card);
+}
+
+function showSchedule(c,area){
+ const days=Object.entries(c.schedule);
+ if(!days.length){
+  area.innerHTML='<p class="empty-note">برنامهٔ هفتگی این کلاس هنوز ثبت نشده است.</p>';
+  return;
+ }
+ days.forEach(([day,lessons])=>{
+  const card=document.createElement("div");
+  card.className="day-card";
+  const title=document.createElement("div");
+  title.className="day-title";
+  title.textContent="✦ "+day;
+  card.appendChild(title);
+  const lessonArea=document.createElement("div");
+  lessonArea.className="day-lessons";
+  lessons.forEach((lesson,index)=>{
+   const chip=document.createElement("span");
+   chip.className="lesson-chip";
+   chip.textContent=(index+1)+" ـ "+lesson;
+   lessonArea.appendChild(chip);
   });
-}
-
-function checkPassword(){
-  const input=document.getElementById("classPassword");
-  const message=document.getElementById("passwordMessage");
-  if(input.value===classes[currentId].password){
-    unlocked[currentId]=true;
-    renderStudents(classes[currentId]);
-  }else{
-    message.textContent="رمز واردشده درست نیست؛ دوباره امتحان کن.";
-    message.style.color="#c03945";
-    input.value="";
-  }
-}
-
-function renderStudents(c){
-  const area=document.getElementById("studentArea");
-  if(!c.students.length){
-    area.innerHTML="<p>فهرست دانش‌آموزان این کلاس هنوز وارد نشده است.</p>";
-    return;
-  }
-  const list=document.createElement("ol");
-  list.className="student-list";
-  c.students.forEach(name=>{
-    const li=document.createElement("li");
-    li.textContent=name;
-    list.appendChild(li);
-  });
-  area.replaceChildren(list);
+  card.appendChild(lessonArea);
+  area.appendChild(card);
+ });
 }
 
 function goHome(){
-  document.getElementById("classPage").classList.add("hidden");
-  document.getElementById("homePage").classList.remove("hidden");
-  currentId=null;
-  window.scrollTo(0,0);
+ document.getElementById("classPage").classList.add("hidden");
+ document.getElementById("homePage").classList.remove("hidden");
+ currentId=null;
+ window.scrollTo(0,0);
 }
 
 function escapeHTML(value){
-  return String(value).replace(/[&<>"']/g,ch=>({
-    "&":"&amp;","<":"&lt;",">":"&gt;",
-    '"':"&quot;","'":"&#39;"
-  })[ch]);
+ return String(value).replace(/[&<>"']/g,ch=>({
+  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+ })[ch]);
 }
 
 createButtons();
