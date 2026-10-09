@@ -3,588 +3,430 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مدرسه یادگاری 🌸</title>
+<title>دبیرستان یادگاری</title>
 
 <style>
-* { box-sizing: border-box; }
-
 :root {
-  --pink: #e879a8;
-  --deep: #b94376;
-  --light: #fff0f6;
-  --black: #382832;
-  --white: #ffffff;
+  --pink: #e9a6c1;
+  --ink: #302833;
+  --paper: #fffafc;
 }
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
-  font-family: Tahoma, sans-serif;
-  background:
-    radial-gradient(circle at 12% 12%, #f5bfd4 0 5px, transparent 6px),
-    radial-gradient(circle at 88% 30%, #f5bfd4 0 6px, transparent 7px),
-    radial-gradient(circle at 18% 75%, #f5bfd4 0 5px, transparent 6px),
-    radial-gradient(circle at 90% 88%, #f5bfd4 0 5px, transparent 6px),
-    linear-gradient(145deg, #fff7fa, #ffeaf2);
-  background-size: 95px 95px, 120px 120px, 135px 135px, 110px 110px, 100% 100%;
-  color: var(--black);
+  font-family: Tahoma, Arial, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
 }
-
 button, input { font-family: inherit; }
-button { cursor: pointer; transition: 0.2s; }
-
-button:hover {
-  transform: translateY(-2px);
-  filter: brightness(0.98);
-}
-
-#welcome {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 22px;
-  background:
-    radial-gradient(circle at 12% 18%, #f5bfd4 0 6px, transparent 7px),
-    radial-gradient(circle at 88% 78%, #f5bfd4 0 7px, transparent 8px),
-    linear-gradient(145deg, #ffe2ed, #fffafd, #ffdce9);
-}
-
-.welcome-box {
-  position: relative;
-  width: 100%;
-  max-width: 420px;
-  text-align: center;
-  padding: 38px 24px;
-  background: rgba(255,255,255,0.96);
-  border: 2px solid #f4b3ce;
-  border-radius: 30px;
-  box-shadow: 0 15px 45px #b9437620;
-  animation: appear 0.8s ease;
-}
-
-.welcome-icon {
-  font-size: 58px;
-  margin-bottom: 12px;
-}
-
-.welcome-box h1 {
-  font-size: 25px;
-  color: var(--deep);
-  line-height: 1.9;
-}
-
-.welcome-box p {
-  font-size: 14px;
-  color: #806574;
-  line-height: 2.2;
-  margin-bottom: 28px;
-}
-
-.primary {
-  display: block;
-  width: 100%;
-  padding: 15px;
-  border: 0;
-  border-radius: 15px;
-  color: white;
-  background: linear-gradient(120deg, #d95791, #f19abd);
-  font-size: 16px;
-  box-shadow: 0 5px 15px #d957912c;
-}
 
 header {
   text-align: center;
-  padding: 27px 12px;
-  color: white;
-  background: linear-gradient(135deg, #c94d82, #f09abd);
-  border-radius: 0 0 25px 25px;
-  box-shadow: 0 5px 20px #b9437620;
+  padding: 30px 16px;
+  background: linear-gradient(135deg,#ffe4ef,#fff9fc);
+  border-bottom: 1px solid #f3d5e2;
 }
-
-header h1 { margin: 0 0 10px; }
-header p { margin: 0; line-height: 2; }
+header .flower { font-size: 30px; }
+header h1 { margin: 10px 0; font-size: 29px; }
+header p { margin: 0; color: #786775; font-size: 13px; }
 
 main {
-  max-width: 700px;
-  margin: 20px auto;
-  padding: 0 14px;
+  width: min(950px, 100%);
+  margin: auto;
+  padding: 22px 16px 50px;
 }
-
-.menu {
+.section-title {
+  font-size: 19px;
+  margin: 8px 0 18px;
+}
+.class-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 13px;
 }
-
-.menu button {
-  padding: 22px 8px;
-  border: 1px solid #f3c3d7;
-  border-radius: 18px;
-  background: white;
-  color: #9d3868;
-  font-size: 15px;
-  box-shadow: 0 4px 14px #9c41670c;
-}
-
-.menu button:hover { background: #ffe8f1; }
-
-#content {
-  background: white;
-  border: 1px solid #f5c6d9;
-  border-radius: 20px;
-  padding: 19px;
-  margin-top: 18px;
+.class-card {
+  border: 1px solid var(--accent);
+  border-radius: 19px;
+  background: var(--light);
+  color: var(--ink);
   min-height: 120px;
-  box-shadow: 0 4px 18px #9c41670c;
-  overflow-wrap: anywhere;
-}
-
-h2 {
-  color: var(--deep);
-  font-size: 20px;
-  line-height: 1.8;
-}
-
-.item {
-  display: block;
-  width: 100%;
-  padding: 13px;
-  margin: 9px 0;
   text-align: right;
-  border: 1px solid #f5d0df;
-  border-radius: 12px;
-  background: #fff2f7;
-  color: #593547;
-  font-size: 14px;
-  line-height: 1.9;
+  padding: 17px 15px;
+  cursor: pointer;
+  transition: transform .18s, box-shadow .18s;
+  box-shadow: 0 5px 15px #3028330a;
 }
+.class-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px #30283312;
+}
+.class-card .symbol { font-size: 22px; }
+.class-card strong { display: block; font-size: 16px; margin: 10px 0 5px; }
+.class-card small { color: #70646e; font-size: 11px; }
 
-.item:hover { background: #ffe2ed; }
+.math { --accent:#d6a900; --light:#fff8d9; }
+.science { --accent:#cf4756; --light:#fff0f1; }
+.humanities { --accent:#32815b; --light:#edf8ef; }
 
+#classPage { display: none; }
 .back {
   border: 0;
-  background: transparent;
-  color: var(--deep);
-  padding: 8px 0;
-  font-size: 14px;
-}
-
-.detail {
-  padding: 16px;
-  border-radius: 14px;
-  background: #fff0f6;
-  border-right: 4px solid var(--pink);
-  line-height: 2.2;
-  margin-top: 12px;
-}
-
-input {
-  width: 100%;
-  padding: 14px;
-  margin: 12px 0;
-  border: 1px solid #eab3ca;
   border-radius: 12px;
-  font-size: 16px;
+  background: #f4e9ef;
+  color: #5a3e50;
+  padding: 11px 15px;
+  cursor: pointer;
+  margin-bottom: 18px;
+}
+.class-hero {
+  padding: 23px 18px;
+  border-radius: 20px;
+  background: var(--light);
+  border: 1px solid var(--accent);
+  position: relative;
+  overflow: hidden;
+}
+.class-hero h2 { margin: 0 0 8px; font-size: 25px; }
+.class-hero p { margin: 0; font-size: 13px; line-height: 1.9; }
+.decor {
+  position: absolute;
+  left: 10px;
+  bottom: -12px;
+  font-size: 64px;
+  opacity: .12;
+  pointer-events: none;
+}
+.info-card {
   background: white;
-}
-
-.error {
-  color: #b33d57;
-  font-size: 13px;
-  line-height: 2;
-}
-
-.note {
-  color: #806c78;
-  font-size: 12px;
-  line-height: 2;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 12px;
+  border: 1px solid #eee4e9;
+  border-radius: 16px;
+  padding: 17px;
   margin-top: 15px;
+}
+.info-card h3 { font-size: 16px; margin: 0 0 13px; }
+.info-card p { line-height: 1.9; font-size: 13px; }
+.student-lock {
+  background: #fff8fb;
+  border: 1px dashed #d8a3ba;
+  padding: 14px;
+  border-radius: 12px;
+}
+.student-lock p { margin-top: 0; }
+.password-row { display: flex; gap: 8px; }
+.password-row input {
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #dfcbd5;
+  border-radius: 10px;
   background: white;
+  font-size: 16px;
 }
-
-th, td {
-  border: 1px solid #f1c8d9;
-  padding: 10px 5px;
-  text-align: center;
-  line-height: 1.9;
+.password-row button, .action {
+  border: 0;
+  border-radius: 10px;
+  padding: 12px 15px;
+  cursor: pointer;
+  background: var(--accent);
+  color: white;
+  white-space: nowrap;
 }
+.message { font-size: 12px; margin-top: 10px; }
+.student-list { line-height: 2.2; padding-right: 20px; }
+table { border-collapse: collapse; width: 100%; font-size: 12px; }
+th, td { padding: 10px 7px; border: 1px solid #eee1e8; text-align: center; }
+th { background: var(--light); }
+.table-wrap { overflow-x: auto; }
+footer { text-align:center; padding: 20px; color:#8a7884; font-size:11px; }
 
-th { background: #fbdce9; color: #92385f; }
-tr:nth-child(even) { background: #fff7fa; }
-
-footer {
-  text-align: center;
-  color: #986d81;
-  font-size: 12px;
-  padding: 22px 8px;
-}
-
-[hidden] { display: none !important; }
-
-@keyframes appear {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@media (min-width: 560px) {
-  .menu { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-}
-
-@media (max-width: 360px) {
-  #content { padding: 13px; }
-  table { font-size: 10px; }
-  th, td { padding: 7px 3px; }
+@media(min-width:650px) {
+  .class-grid { grid-template-columns: repeat(4,minmax(0,1fr)); }
+  .class-card { min-height: 145px; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- صفحه اول -->
-<section id="welcome">
-  <div class="welcome-box">
-    <div class="welcome-icon">🌸🎀🌷</div>
-    <h1>به مدرسه یادگاری خوش آمدی!</h1>
-    <p>
-      به خانه خاطره‌های قشنگمون خوش اومدی.
-      <br>
-      اینجا قراره یادگاری‌هامون برای همیشه بمونن ✨
-    </p>
-    <button class="primary" onclick="enterSchool()">
-      ورود به مدرسه 💗
-    </button>
-    <p style="margin-bottom:0">با عشق برای خاطره‌های قشنگمون ♡</p>
-  </div>
-</section>
+<header>
+  <div class="flower">🌷 ✦ 🌷</div>
+  <h1>دبیرستان یادگاری</h1>
+  <p>خانه‌ای برای یادگیری، دوستی و خاطره‌ها</p>
+</header>
 
-<!-- محتوای مدرسه -->
-<div id="school" hidden>
-  <header>
-    <h1>🌸 مدرسه یادگاری 🌸</h1>
-    <p>خاطرات قشنگ ما، برای همیشه 💗</p>
-  </header>
+<main>
+  <section id="homePage">
+    <h2 class="section-title">کلاس خودت رو انتخاب کن ✨</h2>
+    <div class="class-grid" id="classGrid"></div>
+  </section>
 
-  <main>
-    <div class="menu">
-      <button onclick="showSection('students')">
-        🔒 👩🏻‍🎓<br><br>دانش‌آموزان
-      </button>
-      <button onclick="showSection('teachers')">
-        👩🏻‍🏫<br><br>دبیران
-      </button>
-      <button onclick="showSection('lessons')">
-        📚<br><br>درس‌ها
-      </button>
-      <button onclick="showSection('schedule')">
-        🗓️<br><br>برنامه کلاسی
-      </button>
+  <section id="classPage">
+    <button class="back" onclick="goHome()">← بازگشت به کلاس‌ها</button>
+
+    <div class="class-hero" id="classHero">
+      <div class="decor" id="decor"></div>
+      <h2 id="classTitle"></h2>
+      <p id="classSubtitle"></p>
     </div>
 
-    <section id="content" aria-live="polite">
-      <h2>خوش اومدی! 💗</h2>
-      <p>یکی از بخش‌های مدرسه رو انتخاب کن.</p>
-    </section>
-  </main>
+    <div class="info-card">
+      <h3>📚 درس‌ها و دبیران</h3>
+      <div id="lessons"></div>
+    </div>
 
-  <footer>با عشق ساخته شده برای یادگاری‌ها 🌷</footer>
-</div>
+    <div class="info-card">
+      <h3>🗓️ برنامهٔ هفتگی</h3>
+      <div id="schedule"></div>
+    </div>
+
+    <div class="info-card">
+      <h3>🎓 دانش‌آموزان کلاس</h3>
+      <div id="studentArea"></div>
+    </div>
+  </section>
+</main>
+
+<footer>دبیرستان یادگاری · با عشق به آینده 🌸</footer>
 
 <script>
-const PASSWORD = "1389";
+const classes = {
+  "10s": {
+    name: "دهم تجربی", track: "science", icon: "🧬",
+    password: "2222",
+    students: [],
+    lessons: [],
+    schedule: {}
+  },
+  "11s": {
+    name: "یازدهم تجربی", track: "science", icon: "🔬",
+    password: "4444",
+    students: [], lessons: [], schedule: {}
+  },
+  "12s": {
+    name: "دوازدهم تجربی", track: "science", icon: "🧪",
+    password: "6666",
+    students: [], lessons: [], schedule: {}
+  },
+  "10m": {
+    name: "دهم ریاضی", track: "math", icon: "📐",
+    password: "3333",
+    students: [], lessons: [], schedule: {}
+  },
+  "11m": {
+    name: "یازدهم ریاضی", track: "math", icon: "∑",
+    password: "5555",
+    students: [
+      "ستایش", "نازنین", "نیایش", "ناسیه", "فاطمه",
+      "حسنی", "هستی", "حوریه", "الیسا", "اندیا"
+    ],
+    lessons: [
+      ["حسابان", "خانم حیدری"],
+      ["آمار و احتمال", "خانم حیدری"],
+      ["هندسه", "خانم حیدری"],
+      ["ادبیات", "خانم نوروزی"],
+      ["نگارش", "خانم نوروزی"],
+      ["زمین‌شناسی", "خانم یادگارفرد"],
+      ["تاریخ", "خانم یادگارفرد"],
+      ["انسان و محیط زیست", "خانم یادگارفرد"],
+      ["فیزیک", "خانم فاطمی"],
+      ["زبان", "نامشخص"],
+      ["شیمی", "نامشخص"],
+      ["دین و زندگی", "نامشخص"],
+      ["کار و هنر", "خانم دهقان"],
+      ["عربی", "خانم دهقان"],
+      ["ورزش", "نامشخص"]
+    ],
+    schedule: {
+      "شنبه": ["عربی", "شیمی", "دین و زندگی"],
+      "یکشنبه": ["فیزیک", "حسابان", "تاریخ", "هندسه"],
+      "دوشنبه": ["آمار و احتمال", "زبان یا شیمی", "زمین‌شناسی", "کار و هنر"],
+      "سه‌شنبه": ["انسان و محیط زیست", "نگارش", "زبان", "ادبیات"],
+      "چهارشنبه": ["ورزش", "فیزیک", "حسابان"]
+    }
+  },
+  "10h": {
+    name: "دهم انسانی", track: "humanities", icon: "📖",
+    password: "1111",
+    students: [], lessons: [], schedule: {}
+  },
+  "11h": {
+    name: "یازدهم انسانی", track: "humanities", icon: "✒️",
+    password: "7777",
+    students: [], lessons: [], schedule: {}
+  },
+  "12h": {
+    name: "دوازدهم انسانی", track: "humanities", icon: "📚",
+    password: "8888",
+    students: [], lessons: [], schedule: {}
+  }
+};
 
-const students = [
-  "ستایش", "نازنین", "نیایش", "ناسیه", "فاطمه",
-  "حسنی", "هستی", "حوریه", "الیسا", "اندیا"
-];
+const trackNames = {
+  math: "ریاضی‌فیزیک",
+  science: "علوم تجربی",
+  humanities: "علوم انسانی"
+};
+const decorations = {
+  math: "∑  π  √  x²",
+  science: "⚛  🧬  ⚗",
+  humanities: "❝  ✒  📖"
+};
 
-const lessons = [
-  { name: "حسابان", teacher: "خانم حیدری" },
-  { name: "آمار و احتمال", teacher: "خانم حیدری" },
-  { name: "هندسه", teacher: "خانم حیدری" },
-  { name: "ادبیات", teacher: "خانم نوروزی" },
-  { name: "نگارش", teacher: "خانم نوروزی" },
-  { name: "زمین‌شناسی", teacher: "خانم یادگارفرد" },
-  { name: "تاریخ", teacher: "خانم یادگارفرد" },
-  { name: "انسان و محیط زیست", teacher: "خانم یادگارفرد" },
-  { name: "فیزیک", teacher: "خانم فاطمی" },
-  { name: "زبان", teacher: "نامشخص" },
-  { name: "شیمی", teacher: "نامشخص" },
-  { name: "دین و زندگی", teacher: "نامشخص" },
-  { name: "کار و هنر", teacher: "خانم دهقان" },
-  { name: "عربی", teacher: "خانم دهقان" },
-  { name: "ورزش", teacher: "نامشخص" }
-];
+let currentId = null;
+let unlocked = {};
 
-const schedule = [
-  { day: "شنبه", classes: ["عربی", "شیمی", "دین و زندگی"] },
-  { day: "یکشنبه", classes: ["فیزیک", "حسابان", "تاریخ", "هندسه"] },
-  { day: "دوشنبه", classes: ["آمار و احتمال", "زبان یا شیمی", "زمین‌شناسی", "کار و هنر"] },
-  { day: "سه‌شنبه", classes: ["انسان و محیط زیست", "نگارش", "زبان", "ادبیات"] },
-  { day: "چهارشنبه", classes: ["ورزش", "فیزیک", "حسابان"] }
-];
+function createClassButtons() {
+  const grid = document.getElementById("classGrid");
+  grid.innerHTML = "";
 
-const content = document.getElementById("content");
+  Object.entries(classes).forEach(([id, c]) => {
+    const button = document.createElement("button");
+    button.className = "class-card " + c.track;
+    button.innerHTML = `
+      <span class="symbol">${c.icon}</span>
+      <strong>${c.name}</strong>
+      <small>${trackNames[c.track]} · ورود به کلاس ←</small>
+    `;
+    button.onclick = () => openClass(id);
+    grid.appendChild(button);
+  });
+}
 
-function enterSchool() {
-  document.getElementById("welcome").hidden = true;
-  document.getElementById("school").hidden = false;
+function openClass(id) {
+  currentId = id;
+  const c = classes[id];
+
+  document.getElementById("homePage").style.display = "none";
+  document.getElementById("classPage").style.display = "block";
+
+  const hero = document.getElementById("classHero");
+  hero.className = "class-hero " + c.track;
+
+  document.getElementById("classTitle").textContent = c.name;
+  document.getElementById("classSubtitle").textContent =
+    trackNames[c.track] + " · فضای اختصاصی کلاس شما";
+  document.getElementById("decor").textContent = decorations[c.track];
+
+  showLessons(c);
+  showSchedule(c);
+  showStudents(c);
   window.scrollTo(0, 0);
 }
 
-function makeButton(text, action) {
-  const button = document.createElement("button");
-  button.className = "item";
-  button.textContent = text;
-  button.onclick = action;
-  return button;
+function showLessons(c) {
+  const area = document.getElementById("lessons");
+
+  if (!c.lessons.length) {
+    area.innerHTML = "<p>فهرست درس‌ها و نام دبیران این کلاس هنوز ثبت نشده است.</p>";
+    return;
+  }
+
+  area.innerHTML = `
+    <div class="table-wrap">
+      <table>
+        <tr><th>نام درس</th><th>نام دبیر</th></tr>
+        ${c.lessons.map(item =>
+          `<tr><td>${escapeHTML(item[0])}</td><td>${escapeHTML(item[1])}</td></tr>`
+        ).join("")}
+      </table>
+    </div>`;
 }
 
-function addBack(action) {
-  const button = document.createElement("button");
-  button.className = "back";
-  button.textContent = "← بازگشت";
-  button.onclick = action;
-  content.appendChild(button);
+function showSchedule(c) {
+  const area = document.getElementById("schedule");
+  const days = Object.entries(c.schedule);
+
+  if (!days.length) {
+    area.innerHTML = "<p>برنامهٔ هفتگی این کلاس هنوز ثبت نشده است.</p>";
+    return;
+  }
+
+  area.innerHTML = `
+    <div class="table-wrap">
+      <table>
+        <tr><th>روز</th><th>درس‌ها</th></tr>
+        ${days.map(([day, lessons]) =>
+          `<tr><td>${escapeHTML(day)}</td><td>${lessons.map(escapeHTML).join("، ")}</td></tr>`
+        ).join("")}
+      </table>
+    </div>`;
+}
+
+function showStudents(c) {
+  const area = document.getElementById("studentArea");
+
+  if (unlocked[currentId]) {
+    renderStudents(c);
+    return;
+  }
+
+  area.innerHTML = `
+    <div class="student-lock">
+      <p>🔐 برای دیدن اسامی دانش‌آموزان، رمز این کلاس را وارد کن.</p>
+      <div class="password-row">
+        <input id="classPassword" type="password"
+          inputmode="numeric" placeholder="رمز کلاس"
+          autocomplete="off" aria-label="رمز کلاس">
+        <button onclick="checkPassword()">ورود</button>
+      </div>
+      <div class="message" id="passwordMessage"></div>
+    </div>`;
+  document.getElementById("classPassword").addEventListener("keydown", e => {
+    if (e.key === "Enter") checkPassword();
+  });
+}
+
+function checkPassword() {
+  const c = classes[currentId];
+  const input = document.getElementById("classPassword");
+  const message = document.getElementById("passwordMessage");
+
+  if (input.value === c.password) {
+    unlocked[currentId] = true;
+    renderStudents(c);
+  } else {
+    message.textContent = "رمز درست نیست؛ دوباره امتحان کن.";
+    message.style.color = "#c03945";
+    input.value = "";
+  }
+}
+
+function renderStudents(c) {
+  const area = document.getElementById("studentArea");
+
+  if (!c.students.length) {
+    area.innerHTML = "<p>فهرست دانش‌آموزان این کلاس هنوز ثبت نشده است.</p>";
+    return;
+  }
+
+  const list = document.createElement("ol");
+  list.className = "student-list";
+
+  c.students.forEach(name => {
+    const li = document.createElement("li");
+    li.textContent = name;
+    list.appendChild(li);
+  });
+
+  area.replaceChildren(list);
 }
 
 function goHome() {
-  content.replaceChildren();
-
-  const title = document.createElement("h2");
-  title.textContent = "خوش اومدی! 💗";
-
-  const text = document.createElement("p");
-  text.textContent = "یکی از بخش‌های مدرسه رو انتخاب کن.";
-
-  content.append(title, text);
+  document.getElementById("classPage").style.display = "none";
+  document.getElementById("homePage").style.display = "block";
+  currentId = null;
+  window.scrollTo(0, 0);
 }
 
-function showSection(section) {
-  if (section === "students") return showLock();
-  if (section === "teachers") return showTeachers();
-  if (section === "lessons") return showLessons();
-  if (section === "schedule") return showSchedule();
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, char => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;",
+    '"': "&quot;", "'": "&#39;"
+  })[char]);
 }
 
-function showLock() {
-  content.replaceChildren();
-  addBack(goHome);
-
-  const title = document.createElement("h2");
-  title.textContent = "🔒 ورود به بخش دانش‌آموزان";
-
-  const text = document.createElement("p");
-  text.textContent = "رمز ورود را وارد کن.";
-
-  const form = document.createElement("form");
-  const input = document.createElement("input");
-  input.type = "password";
-  input.placeholder = "رمز ورود";
-  input.autocomplete = "off";
-  input.required = true;
-  input.setAttribute("aria-label", "رمز ورود");
-
-  const button = document.createElement("button");
-  button.className = "primary";
-  button.textContent = "ورود";
-
-  const error = document.createElement("p");
-  error.className = "error";
-
-  form.append(input, button);
-  form.onsubmit = function(event) {
-    event.preventDefault();
-
-    if (input.value === PASSWORD) {
-      showStudents();
-    } else {
-      error.textContent = "رمز اشتباه است؛ دوباره امتحان کن 🌸";
-      input.value = "";
-      input.focus();
-    }
-  };
-
-  content.append(title, text, form, error);
-}
-
-function showStudents() {
-  content.replaceChildren();
-  addBack(goHome);
-
-  const title = document.createElement("h2");
-  title.textContent = "👩🏻‍🎓 دانش‌آموزان";
-  content.appendChild(title);
-
-  students.forEach((student, index) => {
-    content.appendChild(makeButton(
-      (index + 1) + ". " + student,
-      function() { showStudentDetail(student); }
-    ));
-  });
-}
-
-function showStudentDetail(student) {
-  content.replaceChildren();
-  addBack(showStudents);
-
-  const title = document.createElement("h2");
-  title.textContent = "اطلاعات دانش‌آموز";
-
-  const detail = document.createElement("div");
-  detail.className = "detail";
-  detail.textContent = "نام: " + student;
-
-  content.append(title, detail);
-}
-
-function showTeachers() {
-  content.replaceChildren();
-  addBack(goHome);
-
-  const title = document.createElement("h2");
-  title.textContent = "👩🏻‍🏫 دبیران";
-  content.appendChild(title);
-
-  const names = [...new Set(lessons.map(item => item.teacher))];
-
-  names.forEach(name => {
-    const subjects = lessons
-      .filter(item => item.teacher === name)
-      .map(item => item.name);
-
-    content.appendChild(makeButton("🌷 " + name, function() {
-      showTeacherDetail(name, subjects);
-    }));
-  });
-
-  const note = document.createElement("p");
-  note.className = "note";
-  note.textContent = "نام بعضی دبیرها هنوز مشخص نشده است.";
-  content.appendChild(note);
-}
-
-function showTeacherDetail(name, subjects) {
-  content.replaceChildren();
-  addBack(showTeachers);
-
-  const title = document.createElement("h2");
-  title.textContent = name;
-  content.appendChild(title);
-
-  const text = document.createElement("p");
-  text.textContent = "درس‌های مربوط به این دبیر:";
-  content.appendChild(text);
-
-  subjects.forEach(subject => {
-    content.appendChild(makeButton("📚 " + subject, function() {
-      showLessonDetail(subject);
-    }));
-  });
-}
-
-function showLessons() {
-  content.replaceChildren();
-  addBack(goHome);
-
-  const title = document.createElement("h2");
-  title.textContent = "📚 درس‌ها";
-
-  const text = document.createElement("p");
-  text.textContent = "برای دیدن نام دبیر، روی درس بزن.";
-
-  content.append(title, text);
-
-  lessons.forEach(lesson => {
-    content.appendChild(makeButton("🌸 " + lesson.name, function() {
-      showLessonDetail(lesson.name);
-    }));
-  });
-}
-
-function showLessonDetail(name) {
-  const lesson = lessons.find(item => item.name === name);
-  if (!lesson) return;
-
-  content.replaceChildren();
-  addBack(showLessons);
-
-  const title = document.createElement("h2");
-  title.textContent = "📚 " + lesson.name;
-
-  const detail = document.createElement("div");
-  detail.className = "detail";
-
-  const label = document.createElement("p");
-  label.textContent = "دبیر این درس:";
-
-  const teacher = document.createElement("strong");
-  teacher.textContent = lesson.teacher;
-
-  detail.append(label, teacher);
-  content.append(title, detail);
-}
-
-function showSchedule() {
-  content.replaceChildren();
-  addBack(goHome);
-
-  const title = document.createElement("h2");
-  title.textContent = "🗓️ برنامه کلاسی";
-
-  const description = document.createElement("p");
-  description.textContent = "برنامه هفتگی کلاس‌ها";
-
-  content.append(title, description);
-
-  const table = document.createElement("table");
-  const thead = document.createElement("thead");
-  const headerRow = document.createElement("tr");
-
-  ["روز", "زنگ اول", "زنگ دوم", "زنگ سوم", "زنگ چهارم"]
-    .forEach(label => {
-      const th = document.createElement("th");
-      th.textContent = label;
-      headerRow.appendChild(th);
-    });
-
-  thead.appendChild(headerRow);
-  table.appendChild(thead);
-
-  const tbody = document.createElement("tbody");
-
-  schedule.forEach(day => {
-    const row = document.createElement("tr");
-
-    const dayCell = document.createElement("td");
-    dayCell.textContent = day.day;
-    row.appendChild(dayCell);
-
-    for (let i = 0; i < 4; i++) {
-      const cell = document.createElement("td");
-      cell.textContent = day.classes[i] || "—";
-      row.appendChild(cell);
-    }
-
-    tbody.appendChild(row);
-  });
-
-  table.appendChild(tbody);
-  content.appendChild(table);
-
-  const note = document.createElement("p");
-  note.className = "note";
-  note.textContent =
-    "ساعت زنگ‌ها هنوز ثبت نشده است. دوشنبه، زبان یا شیمی طبق اطلاعات دریافتی درج شده.";
-
-  content.appendChild(note);
-}
+createClassButtons();
 </script>
-
 </body>
 </html>
